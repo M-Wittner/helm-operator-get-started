@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/boreal-byte-270613/echo
-      tag: 2.0
+      tag: dev-dzdvdzmq
     replicaCount: 1
     hpa:
       enabled: false
