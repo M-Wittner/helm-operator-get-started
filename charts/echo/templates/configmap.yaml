@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: echo-config-map-env
+data:
+  PORT: "{{ .Values.mongodb.port }}"
+  LOGLEVEL: "{{ .Values.mongodb.loglevel }}"
+  PERSIST: "{{ .Values.mongodb.persist }}"
+  DBNAME: "{{ .Values.mongodb.dbname }}"
