@@ -29,6 +29,6 @@ fi
 
 echo ">>>> Building image ${image} <<<<"
 
-docker build -t ${image} -f ./echo/Dockerfile .
+docker build -t ${image} .
 
 docker push ${image}
