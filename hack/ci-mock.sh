@@ -29,6 +29,6 @@ fi
 
 echo ">>>> Building image ${image} <<<<"
 
-docker build --build-arg GITCOMMIT=${commit} --build-arg VERSION=${version} -t ${image} -f /echo/Dockerfile .
+docker build --build-arg GITCOMMIT=${commit} --build-arg VERSION=${version} -t ${image} -f ./echo/Dockerfile .
 
 docker push ${image}
