@@ -18,5 +18,9 @@ spec:
       repository: eu.gcr.io/boreal-byte-270613/echo
       tag: dev-dzdvdzmq
     replicaCount: 1
-    hpa:
-      enabled: false
+    # mongodb:
+    #   port: "3000"
+    #   loglevel: info
+    #   persist: "true"
+    #   dbname: "echo"
+    #   mongodburl: bW9uZ29kYjovL3VzZXI6MTIzNEBtb25nby0wLm1vbmdvLG1vbmdvLTEubW9uZ28sbW9uZ28tMi5tb25nbzoyNzAxNy9lY2hvP2F1dGhTb3VyY2U9YWRtaW4K
