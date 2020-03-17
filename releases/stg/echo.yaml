@@ -2,21 +2,21 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo-rc
+  name: echo-rc
   namespace: stg
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:stg-*
+    filter.fluxcd.io/chart-image: glob:rc-*
 spec:
-  releaseName: podinfo-rc
+  releaseName: echo-rc
   chart:
-    git: git@github.com:fluxcd/helm-operator-get-started
-    path: charts/podinfo
+    git: git@github.com:M-Wittner/helm-operator-get-started
+    path: charts/echo
     ref: master
   values:
     image:
-      repository: stefanprodan/podinfo
-      tag: stg-9ij63o4c
+      repository: eu.gcr.io/boreal-byte-270613/echo
+      tag: 2.0
     replicaCount: 2
     hpa:
       enabled: true
