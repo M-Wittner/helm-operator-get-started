@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: eu.gcr.io/boreal-byte-270613/echo
-      tag: dev-dzdvdzmq
+      tag: dev-314cbfa
     replicaCount: 1
     # mongodb:
     #   port: "3000"
