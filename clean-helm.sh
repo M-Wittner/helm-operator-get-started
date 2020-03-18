@@ -2,6 +2,8 @@
 
 # helm uninstall -n fluxcd $(helm list -n fluxcd)
 
+helm uninstall helm-operator flux -n fluxcd
+
 kubectl delete ns fluxcd
 
 kubectl delete ClusterRole flux

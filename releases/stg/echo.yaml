@@ -1,25 +1,25 @@
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: echo-rc
-  namespace: stg
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:rc-*
-spec:
-  releaseName: echo-rc
-  chart:
-    git: git@github.com:M-Wittner/helm-operator-get-started
-    path: charts/echo
-    ref: master
-  values:
-    image:
-      repository: eu.gcr.io/boreal-byte-270613/echo
-      tag: 2.0
-    replicaCount: 2
-    hpa:
-      enabled: true
-      maxReplicas: 10
-      cpu: 50
-      memory: 256Mi
+# ---
+# apiVersion: helm.fluxcd.io/v1
+# kind: HelmRelease
+# metadata:
+#   name: echo-rc
+#   namespace: stg
+#   annotations:
+#     fluxcd.io/automated: "true"
+#     filter.fluxcd.io/chart-image: glob:rc-*
+# spec:
+#   releaseName: echo-rc
+#   chart:
+#     git: git@github.com:M-Wittner/helm-operator-get-started
+#     path: charts/echo
+#     ref: master
+#   values:
+#     image:
+#       repository: eu.gcr.io/boreal-byte-270613/echo
+#       tag: 2.0
+#     replicaCount: 2
+#     hpa:
+#       enabled: true
+#       maxReplicas: 10
+#       cpu: 50
+#       memory: 256Mi

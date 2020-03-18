@@ -3,7 +3,7 @@
 repository="eu.gcr.io/boreal-byte-270613/echo"
 branch="master"
 version=""
-commit=$(git rev-parse HEAD | tail -c 8)
+commit=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1 | awk '{print tolower($0)}')
 echo $commit
 while getopts :r:b:v: o; do
     case "${o}" in

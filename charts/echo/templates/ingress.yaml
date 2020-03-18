@@ -2,16 +2,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-resource
+  name: {{ .Chart.Name }}-nginx-ingress
   annotations:
-    nginx.org/proxy-connect-timeout: "900s"
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: echo-prod
 spec:
   rules:
-  {{ range .Values.ingress.hosts }}
-  - host: {{ .host | quote }}
-  {{ end }}
+  # {{ range $host := .Values.ingress.hosts }}
+  # - host: {{ $host.host }}
+  # {{ end }}
   - http:
       paths:
       - backend:

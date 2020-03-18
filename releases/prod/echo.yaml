@@ -1,22 +1,22 @@
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: echo-prod
-  namespace: prod
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:prod-*
-spec:
-  releaseName: echo-prod
-  chart:
-    git: git@github.com:M-Wittner/helm-operator-get-started
-    path: charts/echo
-    ref: master
-  values:
-    image:
-      repository: eu.gcr.io/boreal-byte-270613/echo
-      tag: 2.0
-    replicaCount: 1
-    hpa:
-      enabled: false
+# ---
+# apiVersion: helm.fluxcd.io/v1
+# kind: HelmRelease
+# metadata:
+#   name: echo-prod
+#   namespace: prod
+#   annotations:
+#     fluxcd.io/automated: "true"
+#     filter.fluxcd.io/chart-image: glob:prod-*
+# spec:
+#   releaseName: echo-prod
+#   chart:
+#     git: git@github.com:M-Wittner/helm-operator-get-started
+#     path: charts/echo
+#     ref: master
+#   values:
+#     image:
+#       repository: eu.gcr.io/boreal-byte-270613/echo
+#       tag: 2.0
+#     replicaCount: 1
+#     hpa:
+#       enabled: false
