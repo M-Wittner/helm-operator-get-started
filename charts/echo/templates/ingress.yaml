@@ -9,9 +9,9 @@ metadata:
     cert-manager.io/cluster-issuer: echo-prod
 spec:
   rules:
-  # {{ range $host := .Values.ingress.hosts }}
-  # - host: {{ $host.host }}
-  # {{ end }}
+  {{ range .Values.ingress.hosts }}
+  - host: {{ .host | quote }}
+  {{ end }}
   - http:
       paths:
       - backend:
