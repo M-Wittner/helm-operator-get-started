@@ -26,10 +26,10 @@ spec:
                 name: mongo-url
           resources:
             requests:
-              memory: "{{ .Values.resources.reqMem }}"
-              cpu: "{{ .Values.resources.reqCpu }}"
+              memory: "{{ .Values.resources.requests.memory }}"
+              cpu: "{{ .Values.resources.requests.cpu }}"
             limits:
-              memory: "{{ .Values.resources.limitMem }}"
-              cpu: "{{ .Values.resources.limitCpu }}"
+              memory: "{{ .Values.resources.limits.memory }}"
+              cpu: "{{ .Values.resources.limits.cpu }}"
             
             
