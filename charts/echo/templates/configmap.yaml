@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: echo-config-map-env
+  name: {{ .Values.env.configMap }}
 data:
   PORT: "{{ .Values.mongodb.port }}"
   LOGLEVEL: "{{ .Values.mongodb.loglevel }}"

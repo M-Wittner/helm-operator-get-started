@@ -1,6 +1,6 @@
  # Override the name of the chart, which in turn changes the name of the containers, services etc.
- nameOverride: "mongo"
- fullnameOverride: ""
+#  nameOverride: "mongo"
+ fullnameOverride: "mongo"
  
  # Override the deployment namespace
  # global:
@@ -25,8 +25,8 @@
    existingMetricsSecret: ""
    adminUser: user
    adminPassword: "1234"
-   # metricsUser: metrics
-   # metricsPassword: password
+   metricsUser: metrics
+   metricsPassword: password
    key: keycontent
  
  ## Optionally specify an array of imagePullSecrets.

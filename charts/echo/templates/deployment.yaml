@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}-deployment-deployment
+  name: {{ .Chart.Name }}-deployment
   labels:
     app: {{ .Chart.Name }}
 spec:
@@ -21,15 +21,15 @@ spec:
             - containerPort: 3000
           envFrom:
             - configMapRef:
-                name: echo-config-map-env
+                name: {{ .Values.env.configMap }}
             - secretRef:
-                name: mongo-url
+                name: {{ .Values.env.secret }}
           resources:
             requests:
-              memory: "{{ .Values.resources.requests.memory }}"
-              cpu: "{{ .Values.resources.requests.cpu }}"
+              memory: {{ .Values.resources.requests.memory }}
+              cpu: {{ .Values.resources.requests.cpu }}
             limits:
-              memory: "{{ .Values.resources.limits.memory }}"
-              cpu: "{{ .Values.resources.limits.cpu }}"
+              memory: {{ .Values.resources.limits.memory }}
+              cpu: {{ .Values.resources.limits.cpu }}
             
             
